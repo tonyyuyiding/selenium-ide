@@ -52,7 +52,7 @@
     ],
     "directories": {
       "buildResources": "resources"
-    }, 
+    },
     "productName": "Selenium IDE",
     "mac": {
       "target": {
@@ -130,7 +130,7 @@
     "@seleniumhq/side-model": "4.0.13",
     "@seleniumhq/side-runtime": "4.0.13",
     "dnd-core": "^16.0.1",
-    "electron-chromedriver": "^31.0.0",
+    "electron-chromedriver": "^40.10.6",
     "electron-log": "^5.2.4",
     "electron-store": "^8.2.0",
     "electron-unhandled": "^4.0.1",
@@ -160,7 +160,7 @@
     "@types/webpack-env": "^1.18.5",
     "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.11.0",
-    "electron": "^31.6.0",
+    "electron": "^40.10.6",
     "electron-builder": "^24.13.3",
     "electron-devtools-installer": "^3.2.0",
     "fork-ts-checker-webpack-plugin": "^8.0.0",
