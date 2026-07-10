@@ -25,13 +25,13 @@
     "url": "https://github.com/SeleniumHQ/selenium-ide/issues"
   },
   "devDependencies": {
-    "@types/fs-extra": "^8.0.1",
-    "@types/selenium-webdriver": "^4.1.26",
-    "selenium-webdriver": "^4.25.0"
+    "@types/fs-extra": "^11.0.4",
+    "@types/selenium-webdriver": "^4.1.27",
+    "selenium-webdriver": "^4.27.0"
   },
   "dependencies": {
     "@seleniumhq/browser-info": "4.0.13",
     "@seleniumhq/get-driver": "4.0.13",
-    "fs-extra": "^8.1.0"
+    "fs-extra": "^11.2.0"
   }
 }

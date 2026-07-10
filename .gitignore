@@ -17,6 +17,7 @@ tsconfig.tsbuildinfo
 tsconfig.build.tsbuildinfo
 files
 drivers
+dump.rdb
 *.d.ts.map
 !packages/side-migrate/src/types.d.ts
 

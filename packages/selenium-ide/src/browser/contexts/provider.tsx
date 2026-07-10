@@ -39,7 +39,9 @@ export const SessionContextProviders: React.FC<SessionProvidersProps> = ({
 }) => {
   const session = subscribeToSession()
   return contexts.reduceRight((children, { context, transform }) => {
-    // @ts-expect-error meh idk
-    return <context.Provider value={transform(session)}>{children}</context.Provider>
+    const Provider: any = context.Provider
+    return (
+      <Provider value={transform(session)}>{children}</Provider>
+    )
   }, children)
 }

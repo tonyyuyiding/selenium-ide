@@ -29,6 +29,7 @@ const ReorderableListItem: React.FC<ReorderableListItemProps> = ({
   index,
   reorder,
   reorderConfirm,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   reorderReset,
   select,
   sx = {},
@@ -100,7 +101,7 @@ const ReorderableListItem: React.FC<ReorderableListItemProps> = ({
     },
   })
 
-  // 
+  //
   const [{ isDragging }, drag] = useDrag({
     type: dragType,
     item: () => {

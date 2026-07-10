@@ -28,7 +28,7 @@ export interface RenderOptions {
 
 export type PartialRenderParameters = [
   ExportCommandsShape | ExportCommandShape,
-  RenderOptions
+  RenderOptions,
 ]
 
 export type RenderParameters = [string, ...PartialRenderParameters]
@@ -77,7 +77,7 @@ export type RenderCommandsOptions = Pick<
 
 export type RenderCommandsParameters = [
   ExportCommandsShape,
-  RenderCommandsOptions
+  RenderCommandsOptions,
 ]
 
 export type RenderCommands = (...args: RenderCommandsParameters) => string

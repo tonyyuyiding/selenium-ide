@@ -10,8 +10,8 @@ import { isAutomated } from './util'
 // whatever
 app.commandLine.appendSwitch('remote-debugging-port', '8315')
 if (isAutomated) {
-  app.commandLine.appendSwitch('disable-gpu');
-  app.commandLine.appendSwitch('no-sandbox');
+  app.commandLine.appendSwitch('disable-gpu')
+  app.commandLine.appendSwitch('no-sandbox')
 }
 // Configure logging
 const log = configureLogging()

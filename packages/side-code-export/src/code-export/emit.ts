@@ -198,7 +198,7 @@ export function emitSelection(location: string, emitters: SelectionEmitters) {
   if (!location) throw new Error(`Location can't be empty`)
   const [type, selector] = location.split('=') as [
     keyof SelectionEmitters,
-    string
+    string,
   ]
   if (emitters[type] && selector) {
     let result = emitters[type](selector)

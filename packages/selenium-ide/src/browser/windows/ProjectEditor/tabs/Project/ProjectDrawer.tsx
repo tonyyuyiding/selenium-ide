@@ -18,22 +18,21 @@ type ConfigGroupFactory = (
 
 const ConfigGroup: ConfigGroupFactory =
   (group) =>
-  ({ value }: { value: ConfigSettingsGroup }) =>
-    (
-      <ListItemButton
-        disableRipple
-        id={group}
-        onClick={() =>
-          window.sideAPI.state.set('editor.configSettingsGroup', group)
-        }
-        selected={value === group}
-      >
-        <ListItemText>
-          <FormattedMessage id={languageMap.configTab[group]} />
-          {/*{group === "outPut" ? "导出" : group.slice(0, 1).toUpperCase().concat(group.slice(1))}*/}
-        </ListItemText>
-      </ListItemButton>
-    )
+  ({ value }: { value: ConfigSettingsGroup }) => (
+    <ListItemButton
+      disableRipple
+      id={group}
+      onClick={() =>
+        window.sideAPI.state.set('editor.configSettingsGroup', group)
+      }
+      selected={value === group}
+    >
+      <ListItemText>
+        <FormattedMessage id={languageMap.configTab[group]} />
+        {/*{group === "outPut" ? "导出" : group.slice(0, 1).toUpperCase().concat(group.slice(1))}*/}
+      </ListItemText>
+    </ListItemButton>
+  )
 
 const ProjectConfig = ConfigGroup('project')
 const SystemConfig = ConfigGroup('system')

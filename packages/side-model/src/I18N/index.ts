@@ -8,7 +8,7 @@ type I18NModelDataShape = {
 
 const supportedLanguages = ['en', 'zh'] as const
 
-type SupportedLanguages = typeof supportedLanguages[number]
+type SupportedLanguages = (typeof supportedLanguages)[number]
 
 const loadI18NData = async (
   languageCode: SupportedLanguages
