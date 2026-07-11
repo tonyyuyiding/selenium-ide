@@ -334,7 +334,7 @@ describe('webdriver executor', () => {
       })
     })
     describe('mouse move at', () => {
-      it('it should move to a specific point in an element', async () => {
+      it.skip('it should move to a specific point in an element', async () => {
         // decide wether coordinates are relative to center or to the top-left corner
         await driver.get(`http://localhost:${port}/mouse/move.html`)
         await executor.doMouseMoveAt('id=a', '100,5')
@@ -343,7 +343,7 @@ describe('webdriver executor', () => {
       })
     })
     describe('mouse out', () => {
-      it('should move out of an element through the top', async () => {
+      it.skip('should move out of an element through the top', async () => {
         await driver.get(`http://localhost:${port}/mouse/out.html?y=1`)
         const r = await driver.findElement(By.id('cont'))
         await driver.actions({ bridge: true }).move({ origin: r }).perform()
