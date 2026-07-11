@@ -1,4 +1,4 @@
-name: 'Build'
+name: 'Unit Test'
 
 on:
   pull_request:
@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,5 +20,7 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
-      - name: Build TypeScript and webpack
-        run: pnpm run build
+      - name: Build TypeScript packages
+        run: pnpm run build:ts
+      - name: Run unit tests
+        run: pnpm run test:jest:core -- --testPathIgnorePatterns='webdriver|download-driver'
