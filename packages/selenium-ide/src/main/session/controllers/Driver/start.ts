@@ -7,7 +7,7 @@ import * as path from 'node:path'
 import * as os from 'os'
 import { COLOR_MAGENTA, COLOR_YELLOW, isAutomated, vdebuglog } from 'main/util'
 
-const successMessage = 'was started successfully.'
+const successMessage = 'was started successfully'
 export interface DriverStartSuccess {
   driver: ChildProcess
   success: true
