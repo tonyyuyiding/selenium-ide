@@ -197,8 +197,11 @@ const electronPolyfills = (
       if (!window) {
         throw new Error('Failed to find playback window')
       }
+      if (!command.target) {
+        throw new Error('Window size target is required')
+      }
       const [targetWidth, targetHeight] = command
-        .target!.split('x')
+        .target.split('x')
         .map((v) => parseInt(v))
       await session.windows.resizePlaybackWindow(
         window,

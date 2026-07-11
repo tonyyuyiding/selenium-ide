@@ -11,11 +11,15 @@ const Prompt = () => {
   const answerRef = React.useRef<HTMLInputElement>(null)
   // @ts-expect-error this exists
   const dismissPrompt = () => window.dismissPrompt()
-  // @ts-expect-error this exists
-  const answerPrompt = () => window.answerPrompt(answerRef.current!.value)
+  const answerPrompt = () => {
+    if (answerRef.current) {
+      // @ts-expect-error this exists
+      window.answerPrompt(answerRef.current.value)
+    }
+  }
 
   React.useEffect(() => {
-    answerRef.current!.focus()
+    answerRef.current?.focus()
     window.addEventListener('error', (e) => {
       // @ts-expect-error this exists
       window.promptError(e.message)

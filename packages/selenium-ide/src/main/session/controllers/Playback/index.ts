@@ -191,12 +191,16 @@ export default class PlaybackController extends BaseController {
       }
     } catch (windowDoesNotExist) {
       const UUID = randomUUID()
-      window = await this.session.windows.openPlaybackWindow(playback, {
+      const newWindow = await this.session.windows.openPlaybackWindow(playback, {
         title: UUID,
       })
+      window = newWindow
       const handle = await this.session.windows.getPlaybackWindowHandleByID(
-        window.id
-      )!
+        newWindow.id
+      )
+      if (!handle) {
+        throw new Error('Failed to get window handle')
+      }
       const state = await this.session.state.get()
       const currentTest = getActiveTest(state)
       const currentCommand = getActiveCommand(state)
@@ -211,12 +215,15 @@ export default class PlaybackController extends BaseController {
           : firstURL.href
       try {
         await driver.switchTo().window(handle)
-        await retry(() => window!.loadURL(url), 3, 500)
+        await retry(() => newWindow.loadURL(url), 3, 500)
       } catch (e) {
         console.warn('Open command failed:', e)
       }
     }
-    return window!
+    if (!window) {
+      throw new Error('Failed to claim playback window')
+    }
+    return window
   }
 
   async play(

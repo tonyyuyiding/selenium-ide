@@ -327,8 +327,11 @@ export default class WindowsController extends BaseController {
   async closePlaybackWindow(id: number) {
     const activePlaybackWindow = this.getActivePlaybackWindow()
     const window = BrowserWindow.fromId(id)
+    if (!window) {
+      return
+    }
     const isActive = window === activePlaybackWindow
-    window!.destroy()
+    window.destroy()
 
     if (isActive) {
       const newActiveWindow = this.playbackWindows.find((w) => w.id !== id)

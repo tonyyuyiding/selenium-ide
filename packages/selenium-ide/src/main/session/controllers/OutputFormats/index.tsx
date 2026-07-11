@@ -67,7 +67,11 @@ export default class OutputFormatsController extends BaseController {
       ) as LanguageEmitter)
     if (!format) throw new Error(`Format ${formatName} not found`)
     const project = await this.session.projects.getActive()
-    const testName = project.tests.find((t) => t.id === testID)!.name
+    const test = project.tests.find((t) => t.id === testID)
+    if (!test) {
+      throw new Error(`Test ${testID} not found`)
+    }
+    const testName = test.name
     const outputPath = await this.session.dialogs.openSave(
       kebabCase(testName) + format.opts.fileExtension
     )
