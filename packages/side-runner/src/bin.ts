@@ -99,7 +99,7 @@ program
     'Write screenshots of failed tests to file in specified directory. Name will be based on test + timestamp.'
   )
   .option(
-    '-f, --force',
+    '-F, --force',
     "Forcibly run the project, regardless of project's version"
   )
   .option('-d, --debug', 'Print debug logs')
