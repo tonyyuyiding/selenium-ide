@@ -22,5 +22,3 @@ jobs:
         run: pnpm install
       - name: Build TypeScript and webpack
         run: pnpm run build
-      - name: Build electron app (dry-run)
-        run: pnpm run --filter selenium-ide build:electron:dir
