@@ -93,6 +93,6 @@ export function isVisible(elem: HTMLElement) {
   )
   do {
     if (pointContainer === elem) return true
-  } while ((pointContainer = pointContainer!.parentNode))
+  } while ((pointContainer = pointContainer?.parentNode))
   return false
 }

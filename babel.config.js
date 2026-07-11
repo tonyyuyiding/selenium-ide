@@ -20,13 +20,9 @@ module.exports = {
       '@babel/preset-env',
       {
         targets: {
-          node: '14',
+          node: '18',
         },
       },
     ],
-  ],
-  plugins: [
-    '@babel/plugin-proposal-export-namespace-from',
-    '@babel/plugin-proposal-class-properties',
   ],
 }

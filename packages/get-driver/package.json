@@ -24,15 +24,15 @@
     "url": "https://github.com/SeleniumHQ/selenium-ide/issues"
   },
   "dependencies": {
-    "fs-extra": "^8.1.0",
-    "node-fetch": "^2.6.0",
-    "tar": "^7.1.0",
-    "unzipper": "^0.10.5"
+    "fs-extra": "^11.2.0",
+    "node-fetch": "^2.7.0",
+    "tar": "^7.4.3",
+    "unzipper": "^0.11.6"
   },
   "devDependencies": {
-    "@types/fs-extra": "^8.0.0",
-    "@types/node-fetch": "^2.5.2",
-    "@types/unzipper": "^0.10.0",
-    "nock": "^11.6.0"
+    "@types/fs-extra": "^11.0.4",
+    "@types/node-fetch": "^2.6.11",
+    "@types/unzipper": "^0.10.9",
+    "nock": "^13.5.5"
   }
 }

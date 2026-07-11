@@ -33,7 +33,7 @@ const commonConfig: Pick<
 > & {
   devServer?: DevServerConfiguration
 } = {
-  devtool: 'source-map',
+  devtool: false,
   externals: ['utf-8-validate', 'bufferutil'],
   mode: isProduction ? 'production' : 'development',
   module: {

@@ -71,7 +71,9 @@ const processDownloadResonse = (
         tar.t({
           filter: (path, _stat) => path === 'geckodriver',
           onentry: (entry) => {
-            entry.pipe(fs.createWriteStream(destination)).on('close', resolve)
+            entry
+              .pipe(fs.createWriteStream(destination))
+              .on('close', () => resolve(null))
           },
         })
       )

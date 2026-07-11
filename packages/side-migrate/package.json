@@ -31,6 +31,6 @@
     "@seleniumhq/side-model": "^4.0.0-alpha.4",
     "unescape": "^1.0.1",
     "xml-escape": "^1.1.0",
-    "xml-js": "^1.5.2"
+    "xml-js": "^1.6.11"
   }
 }

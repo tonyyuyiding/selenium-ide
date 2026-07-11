@@ -22,7 +22,7 @@
   "dependencies": {
     "@seleniumhq/side-model": "4.0.13",
     "@seleniumhq/side-runtime": "4.0.13",
-    "commander": "^9.4.0"
+    "commander": "^12.1.0"
   },
   "gitHead": "f58e327e7616e23a3e926e4b80cf9952164e5744"
 }

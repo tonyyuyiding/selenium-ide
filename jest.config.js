@@ -1,9 +1,4 @@
 module.exports = {
-  globals: {
-    'ts-jest': {
-      tsConfig: 'tsconfig.base.json',
-    },
-  },
   projects: ['<rootDir>/packages/*/jest.config.js'],
   testEnvironment: 'jsdom',
   testEnvironmentOptions: {
@@ -17,6 +12,6 @@ module.exports = {
   testPathIgnorePatterns: ['/node_modules/'],
   transform: {
     '^.+\\.jsx?$': 'babel-jest',
-    '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.tsx?$': ['ts-jest', { tsconfig: 'tsconfig.base.json' }],
   },
 }

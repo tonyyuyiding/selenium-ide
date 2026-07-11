@@ -34,8 +34,8 @@ const URLBar: React.FC<{ tab: null | TabShape }> = ({ tab }) => {
           inputRef={ref}
           onKeyDown={(e) => {
             const value = (e.target as HTMLInputElement).value
-            if (e.key === 'Enter') {
-              navigatePlaybackWindow(tab!.id, value)
+            if (e.key === 'Enter' && tab) {
+              navigatePlaybackWindow(tab.id, value)
             }
           }}
           margin="none"

@@ -14,7 +14,7 @@ const addToBeginning = (prevList: string[], entry: string) => {
   return list
 }
 
-const removeOne=(list: string[], entry: string)=>{
+const removeOne = (list: string[], entry: string) => {
   const entryIndex = list.indexOf(entry)
   const entryIsIndexed = entryIndex !== -1
   if (entryIsIndexed) {

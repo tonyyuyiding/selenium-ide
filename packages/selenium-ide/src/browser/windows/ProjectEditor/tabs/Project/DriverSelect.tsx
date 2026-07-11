@@ -43,13 +43,13 @@ const DriverSelector = () => {
     browser = browser.useBidi ? browser : ourElectronBrowserInfo
     /****************以上为我新增*****************/
     console.log('Setting browser', browser)
-    setBrowserInfo((info) => ({ browsers: info!.browsers, selected: null }))
+    setBrowserInfo((info) => ({ browsers: info?.browsers ?? [], selected: null }))
     await window.sideAPI.driver.download(browser)
     await window.sideAPI.driver.stopProcess()
     await window.sideAPI.driver.startProcess(browser)
     await window.sideAPI.driver.selectBrowser(browser)
     setBrowserInfo((info) => ({
-      browsers: info!.browsers,
+      browsers: info?.browsers ?? [],
       selected: browser,
     }))
   }
