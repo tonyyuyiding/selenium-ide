@@ -350,6 +350,9 @@ export default class WindowsController extends BaseController {
   }
 
   async shiftFocus(e: Electron.IpcMainEvent, target: 'editor' | 'playback') {
+    if (!e.senderFrame) {
+      return
+    }
     console.log(
       'Maybe shifting focus to',
       target,
@@ -582,6 +585,9 @@ export default class WindowsController extends BaseController {
     // the preload scripts will sometimes just fail to register or something
     window.webContents.on('frame-created', async (_event, details) => {
       const frame = details.frame
+      if (!frame) {
+        return
+      }
       await frame.once('dom-ready', async () => {
         const hasAPI = await frame.executeJavaScript('window.sideAPI')
         if (!hasAPI) {

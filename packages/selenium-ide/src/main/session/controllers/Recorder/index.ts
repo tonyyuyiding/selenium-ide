@@ -124,6 +124,9 @@ export default class RecorderController extends BaseController {
   async getFrameLocation(event: Electron.IpcMainEvent): Promise<string> {
     let frameLocation = 'root'
     let activeFrame = event.senderFrame
+    if (!activeFrame) {
+      return frameLocation
+    }
     let pathParts = []
     while (activeFrame.parent) {
       const frameIndex = activeFrame.parent.frames.indexOf(activeFrame)
