@@ -1,6 +1,14 @@
+# Build and attach platform binaries to a GitHub Release.
+# Triggered automatically when release-please pushes a v* tag,
+# or manually via the Actions tab.
+
+name: 'Release Selenium IDE'
+
 on:
   push:
-    branches: [trunk]
+    tags:
+      - 'v*'
+  workflow_dispatch:
 
 jobs:
   release:
@@ -17,19 +25,8 @@ jobs:
             platform: mac
 
     permissions:
-      actions: read
-      checks: read
       contents: write
-      deployments: read
-      issues: read
-      discussions: read
-      packages: read
-      pages: read
-      pull-requests: read
-      repository-projects: read
-      security-events: read
-      statuses: read
-    if: github.repository == 'seleniumhq/selenium-ide'
+
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -37,7 +34,7 @@ jobs:
           version: 8
       - uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
+          node-version: '22.x'
           registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies
         run: pnpm install

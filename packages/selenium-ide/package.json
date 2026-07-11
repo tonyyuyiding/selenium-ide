@@ -39,7 +39,7 @@
     "node": ">=18"
   },
   "build": {
-    "appId": "org.seleniumhq.selenium-ide",
+    "appId": "com.tonyyuyiding.selenium-ide",
     "asarUnpack": [
       "node_modules/electron-chromedriver/bin/chromedriver",
       "node_modules/electron-chromedriver/bin/chromedriver.exe"
@@ -83,7 +83,7 @@
       "publish": [
         {
           "provider": "github",
-          "owner": "SeleniumHQ",
+          "owner": "tonyyuyiding",
           "repo": "selenium-ide"
         }
       ],
