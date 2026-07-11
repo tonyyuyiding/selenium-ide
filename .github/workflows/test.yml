@@ -20,5 +20,7 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
+      - name: Build TypeScript packages
+        run: pnpm run build:ts
       - name: Run unit tests
         run: pnpm run test:jest:core
